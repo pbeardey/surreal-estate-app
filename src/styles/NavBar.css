@@ -1,0 +1,30 @@
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: white;
+  border-bottom-style: solid;
+  border-bottom-color: grey;
+  margin: 3px;
+  height: 70px;
+}
+
+.navbar-logo {
+  margin-left: 3px;
+  height: 95%;
+}
+
+.navbar-links {
+  margin: 0px;
+  padding: 3px;
+}
+
+.navbar-links-item{
+  display: inline-block;
+  margin: 0px 20px;
+}
