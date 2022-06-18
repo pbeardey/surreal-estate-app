@@ -17,7 +17,8 @@ exports[`Navbar renders renders NavBar 1`] = `
         class="navbar-links-item"
       >
         <a
-          href=""
+          class="item"
+          href="/"
         >
           View Properties
         </a>
@@ -26,7 +27,8 @@ exports[`Navbar renders renders NavBar 1`] = `
         class="navbar-links-item"
       >
         <a
-          href=""
+          class="item"
+          href="/add-property"
         >
           Add a Property
         </a>
