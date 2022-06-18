@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar renders renders NavBar 1`] = `
+<DocumentFragment>
+  <div
+    class="navbar-container"
+  >
+    <img
+      alt="logo"
+      class="navbar-logo"
+      src="https://mcrcodes.s3.eu-west-2.amazonaws.com/course/surreal-estate/logo.png"
+    />
+    <ul
+      class="navbar-links"
+    >
+      <li
+        class="navbar-links-item"
+      >
+        <a
+          href=""
+        >
+          View Properties
+        </a>
+      </li>
+      <li
+        class="navbar-links-item"
+      >
+        <a
+          href=""
+        >
+          Add a Property
+        </a>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;
