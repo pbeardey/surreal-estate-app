@@ -1,5 +1,7 @@
+/* eslint-disable no-console */
 import React, { useState } from "react";
-import postProperty from "../requests/postProperty";
+import axios from "axios";
+import Alert from "./Alert";
 import "../styles/AddProperty.css";
 
 const AddProperty = () => {
@@ -13,15 +15,34 @@ const AddProperty = () => {
       city: "Manchester",
       email: "",
     },
+    alert: {
+      message: "",
+      isSuccess: false,
+    },
   };
 
-  // eslint-disable-next-line no-unused-vars
   const [fields, setFields] = useState(initialState.fields);
+  // eslint-disable-next-line no-unused-vars
+  const [alert, setAlert] = useState(initialState.alert);
 
-  const handleAddProperty = async (event) => {
+  const handleAddProperty = (event) => {
     event.preventDefault();
-    // eslint-disable-next-line no-console
-    await postProperty(fields);
+    setAlert({ message: "", isSuccess: false });
+    const API_URL = "http://localhost:3000/api/v1";
+    axios
+      .post(`${API_URL}/PropertyListing`, fields)
+      .then(() => {
+        setAlert({
+          message: "Property Added",
+          isSuccess: true,
+        });
+      })
+      .catch(() => {
+        setAlert({
+          message: "Server error. Please try again later",
+          isSuccess: false,
+        });
+      });
   };
 
   const handleFieldChange = (event) => {
@@ -114,6 +135,7 @@ const AddProperty = () => {
         </label>
         <button type="submit">Add</button>
       </form>
+      <Alert message={alert.message} success={alert.isSuccess} />
     </div>
   );
 };
