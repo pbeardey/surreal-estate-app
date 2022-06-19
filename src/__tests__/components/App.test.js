@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import React from "react";
-import App from "../components/App";
+import App from "../../components/App";
 
 test("renders learn react link", () => {
   render(
