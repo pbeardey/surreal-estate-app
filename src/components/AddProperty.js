@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import postProperty from "../requests/postProperty";
 import "../styles/AddProperty.css";
 
-const AddProperties = () => {
+const AddProperty = () => {
   const initialState = {
     fields: {
       title: "",
-      type: "",
+      type: "Flat",
       bedrooms: "",
       bathrooms: "",
       price: "",
@@ -17,10 +18,10 @@ const AddProperties = () => {
   // eslint-disable-next-line no-unused-vars
   const [fields, setFields] = useState(initialState.fields);
 
-  const handleAddProperty = (event) => {
+  const handleAddProperty = async (event) => {
     event.preventDefault();
     // eslint-disable-next-line no-console
-    console.log(fields);
+    await postProperty(fields);
   };
 
   const handleFieldChange = (event) => {
@@ -117,4 +118,4 @@ const AddProperties = () => {
   );
 };
 
-export default AddProperties;
+export default AddProperty;
