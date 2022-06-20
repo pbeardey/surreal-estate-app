@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PropertyCard renders correctly renders snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="property-card-container"
+  >
+    <img
+      alt="logo"
+      class="property-card-logo"
+      src="https://mcrcodes.s3.eu-west-2.amazonaws.com/course/surreal-estate/logo.png"
+    />
+    <div
+      class="property-card-image"
+    />
+    <div
+      class="property-card-title"
+    >
+      2 bedroom period property
+    </div>
+    <div
+      class="property-card-type"
+    >
+      Flat - Manchester
+    </div>
+    <div
+      class="property-card-bathrooms"
+    >
+      <svg
+        aria-hidden="true"
+        class="svg-inline--fa fa-bath "
+        data-icon="bath"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M32 384c0 28.32 12.49 53.52 32 71.09V496C64 504.8 71.16 512 80 512h32C120.8 512 128 504.8 128 496v-15.1h256V496c0 8.836 7.164 16 16 16h32c8.836 0 16-7.164 16-16v-40.9c19.51-17.57 32-42.77 32-71.09V352H32V384zM496 256H96V77.25C95.97 66.45 111 60.23 118.6 67.88L132.4 81.66C123.6 108.6 129.4 134.5 144.2 153.2C137.9 159.5 137.8 169.8 144 176l11.31 11.31c6.248 6.248 16.38 6.248 22.63 0l105.4-105.4c6.248-6.248 6.248-16.38 0-22.63l-11.31-11.31c-6.248-6.248-16.38-6.248-22.63 0C230.7 33.26 204.7 27.55 177.7 36.41L163.9 22.64C149.5 8.25 129.6 0 109.3 0C66.66 0 32 34.66 32 77.25v178.8L16 256C7.164 256 0 263.2 0 272v32C0 312.8 7.164 320 16 320h480c8.836 0 16-7.164 16-16v-32C512 263.2 504.8 256 496 256z"
+          fill="currentColor"
+        />
+      </svg>
+       2
+    </div>
+    <div
+      class="property-card-bedrooms"
+    >
+      <svg
+        aria-hidden="true"
+        class="svg-inline--fa fa-bed "
+        data-icon="bed"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        viewBox="0 0 640 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M176 288C220.1 288 256 252.1 256 208S220.1 128 176 128S96 163.9 96 208S131.9 288 176 288zM544 128H304C295.2 128 288 135.2 288 144V320H64V48C64 39.16 56.84 32 48 32h-32C7.163 32 0 39.16 0 48v416C0 472.8 7.163 480 16 480h32C56.84 480 64 472.8 64 464V416h512v48c0 8.837 7.163 16 16 16h32c8.837 0 16-7.163 16-16V224C640 170.1 597 128 544 128z"
+          fill="currentColor"
+        />
+      </svg>
+       3
+    </div>
+    <div
+      class="property-card-price"
+    >
+      £1000
+    </div>
+    <div
+      class="property-card-emaillink"
+    >
+      <a
+        href="ourHouse@street.com"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-envelope "
+          data-icon="envelope"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z"
+            fill="currentColor"
+          />
+        </svg>
+        Email
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;
