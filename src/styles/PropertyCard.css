@@ -1,6 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+.property-card-container {
+  background-color: lightseagreen;
+  width: 30%;
+  margin: 10px;
+  border: black 4px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.property-card-container img{
+  width: 95%;
+  margin-top: 5px;
+  margin-left: 2;
+  border-radius: 3px;
+}
 .property-card-emaillink {
   background-color: grey;
   text-align: center;
-  width: 100%;
+  margin-left: 2.5%;
+  margin-bottom: 10px;
+  width: 95%;
   color: white;
+  padding: 5px;
 }
