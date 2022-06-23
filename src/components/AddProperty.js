@@ -9,9 +9,9 @@ const AddProperty = () => {
     fields: {
       title: "",
       type: "Flat",
-      bedrooms: "",
-      bathrooms: "",
-      price: "",
+      bedrooms: 1,
+      bathrooms: 1,
+      price: 1,
       city: "Manchester",
       email: "",
     },
@@ -22,7 +22,6 @@ const AddProperty = () => {
   };
 
   const [fields, setFields] = useState(initialState.fields);
-  // eslint-disable-next-line no-unused-vars
   const [alert, setAlert] = useState(initialState.alert);
 
   const handleAddProperty = (event) => {
@@ -85,7 +84,7 @@ const AddProperty = () => {
           <input
             id="bedrooms"
             name="bedrooms"
-            value={fields.bedrooms}
+            value={parseInt(fields.bedrooms, 10)}
             onChange={handleFieldChange}
             placeholder="3"
           />
@@ -95,7 +94,7 @@ const AddProperty = () => {
           <input
             id="bathrooms"
             name="bathrooms"
-            value={fields.bathrooms}
+            value={parseInt(fields.bathrooms, 10)}
             onChange={handleFieldChange}
             placeholder="2"
           />
@@ -105,7 +104,7 @@ const AddProperty = () => {
           <input
             id="price"
             name="price"
-            value={fields.price}
+            value={parseInt(fields.price, 10)}
             onChange={handleFieldChange}
             placeholder="100000"
           />
