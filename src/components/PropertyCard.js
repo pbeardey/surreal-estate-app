@@ -3,6 +3,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faBed, faBath } from "@fortawesome/free-solid-svg-icons";
+import PropTypes from "prop-types";
 import "../styles/PropertyCard.css";
 
 const PropertyCard = ({ propertyData }) => {
@@ -33,6 +34,19 @@ const PropertyCard = ({ propertyData }) => {
       </div>
     </div>
   );
+};
+
+PropertyCard.propTypes = {
+  propertyData: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    bathrooms: PropTypes.number,
+    bedrooms: PropTypes.number,
+    email: PropTypes.string,
+    city: PropTypes.string,
+    price: PropTypes.number,
+    title: PropTypes.string,
+    type: PropTypes.string,
+  }).isRequired,
 };
 
 export default PropertyCard;
