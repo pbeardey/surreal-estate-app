@@ -1,34 +1,24 @@
-import axios from "axios";
+// import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import PropertyCard from "./PropertyCard";
 import Alert from "./Alert";
+import SideBar from "./SideBar";
+import getProperties from "../requests/getProperties";
 import "../styles/Properties.css";
 
 const Properties = () => {
-  const API_URL = "http://localhost:3000/api/v1/PropertyListing/";
   const [properties, setProperties] = useState([]);
   const [alert, setAlert] = useState("");
+  const { search } = useLocation();
 
   useEffect(() => {
-    axios
-      .get(API_URL)
-      .then((response) => {
-        setProperties(response.data);
-        setAlert("");
-      })
-      .catch((err) => {
-        const { status } = err.response;
-        if (status === 404) {
-          setAlert("Properties not found");
-        }
-        if (status === 500) {
-          setAlert("Server Error...Please try again later.");
-        }
-      });
-  }, []);
+    getProperties(setProperties, setAlert, search);
+  }, [search]);
 
   return (
     <div className="properties-container">
+      <SideBar />
       <Alert message={alert} />
       {properties.map((property) => (
         <PropertyCard key={property._id} propertyData={property} />

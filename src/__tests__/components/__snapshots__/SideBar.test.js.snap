@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sidebar renders renders SideBar 1`] = `
+<DocumentFragment>
+  <div
+    class="side-bar"
+  >
+    <ul>
+      <li>
+        <a
+          href="/"
+        >
+          All
+        </a>
+      </li>
+      <li>
+        <a
+          href="/?query={\\"city\\": \\"Manchester\\"}"
+        >
+          Manchester
+        </a>
+      </li>
+      <li>
+        <a
+          href="/?query={\\"city\\": \\"Leeds\\"}"
+        >
+          Leeds
+        </a>
+      </li>
+      <li>
+        <a
+          href="/?query={\\"city\\": \\"Liverpool\\"}"
+        >
+          Liverpool
+        </a>
+      </li>
+      <li>
+        <a
+          href="/?query={\\"city\\": \\"Sheffield\\"}"
+        >
+          Sheffield
+        </a>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;

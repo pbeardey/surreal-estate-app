@@ -3,6 +3,7 @@ import PropertyCard from "../../components/PropertyCard";
 
 describe("PropertyCard renders correctly", () => {
   const validProps = {
+    _id: "abc123",
     title: "2 bedroom period property",
     type: "Flat",
     bedrooms: 3,
@@ -47,7 +48,7 @@ describe("PropertyCard renders correctly", () => {
   });
 
   it("renders email link", () => {
-    const emailLink = screen.getByRole("link");
+    const emailLink = screen.getByRole("link", { name: /email/i });
 
     expect(emailLink).toHaveAttribute("href", validProps.email);
   });
