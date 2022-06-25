@@ -12,14 +12,14 @@ describe("Sidebar renders", () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it("renders 5 options", () => {
+  it("renders manchester link", () => {
     render(
       <Router>
         <SideBar />
       </Router>
     );
-    const listItems = screen.getAllByRole("listitem");
+    const listItems = screen.getByRole("link", { name: /manchester/i });
 
-    expect(listItems).toHaveLength(5);
+    expect(listItems).toHaveAttribute("href", '/?query={"city":"manchester"}');
   });
 });
