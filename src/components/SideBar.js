@@ -1,13 +1,18 @@
-/* eslint-disable no-console */
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
-// eslint-disable-next-line no-unused-vars
+import React, { useState } from "react";
+import { Link, useLocation, useHistory } from "react-router-dom";
 import qs from "qs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSortUp, faSortDown } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSortUp,
+  faSortDown,
+  faMagnifyingGlass,
+} from "@fortawesome/free-solid-svg-icons";
 import "../styles/SideBar.css";
 
 const SideBar = () => {
+  const [searchText, setSearchText] = useState("");
+  const history = useHistory();
+
   const buildQueryString = (operation, valueObj) => {
     const { search } = useLocation();
     const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
@@ -21,8 +26,35 @@ const SideBar = () => {
     });
   };
 
+  const handleTextChange = (event) => {
+    setSearchText(event.target.value);
+  };
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    // eslint-disable-next-line no-console
+    console.log(`searchtext${searchText}`);
+    const newQueryString = buildQueryString("query", {
+      title: { searchText },
+    });
+    // eslint-disable-next-line no-console
+    console.log(`Query: ${newQueryString}`);
+    history.push(newQueryString);
+  };
+
   return (
     <div className="side-bar">
+      <form className="side-bar__search-form" onSubmit={handleSearch}>
+        <input
+          type="text"
+          value={searchText}
+          onChange={handleTextChange}
+          placeholder="Swinton"
+        />
+        <button type="submit">
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+        </button>
+      </form>
       <ul>
         <li>
           <Link className="side-bar__filter" to="/">
@@ -32,7 +64,7 @@ const SideBar = () => {
         <li>
           <Link
             className="side-bar__filter"
-            to={buildQueryString("query", { city: "manchester" })}
+            to={buildQueryString("query", { city: "Manchester" })}
           >
             Manchester
           </Link>
@@ -40,7 +72,7 @@ const SideBar = () => {
         <li>
           <Link
             className="side-bar__filter"
-            to={buildQueryString("query", { city: "leeds" })}
+            to={buildQueryString("query", { city: "Leeds" })}
           >
             Leeds
           </Link>
@@ -48,7 +80,7 @@ const SideBar = () => {
         <li>
           <Link
             className="side-bar__filter"
-            to={buildQueryString("query", { city: "liverpool" })}
+            to={buildQueryString("query", { city: "Liverpool" })}
           >
             Liverpool
           </Link>
@@ -56,7 +88,7 @@ const SideBar = () => {
         <li>
           <Link
             className="side-bar__filter"
-            to={buildQueryString("query", { city: "sheeffield" })}
+            to={buildQueryString("query", { city: "Sheffield" })}
           >
             Sheffield
           </Link>

@@ -2,6 +2,14 @@
   background-color: lightgoldenrodyellow;
 }
 
+.side-bar__search-form {
+  margin: 10px;
+}
+
+.side-bar__search-form > button {
+  margin-left: -15px;
+}
+
 .side-bar > ul {
   width: 200px;
   margin: 2px;

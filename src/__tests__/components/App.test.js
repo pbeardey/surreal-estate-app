@@ -13,7 +13,6 @@ describe("Surreal Estate App", () => {
   });
 
   test("renders App", () => {
-
     const linkElement = screen.getByText(/surreal estate/i);
     expect(linkElement).toBeInTheDocument();
   });
