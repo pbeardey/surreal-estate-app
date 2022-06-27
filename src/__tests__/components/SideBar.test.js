@@ -20,6 +20,6 @@ describe("Sidebar renders", () => {
     );
     const listItems = screen.getByRole("link", { name: /manchester/i });
 
-    expect(listItems).toHaveAttribute("href", '/?query={"city":"manchester"}');
+    expect(listItems).toHaveAttribute("href", '/?query={"city":"Manchester"}');
   });
 });

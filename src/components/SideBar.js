@@ -12,14 +12,19 @@ import "../styles/SideBar.css";
 const SideBar = () => {
   const [searchText, setSearchText] = useState("");
   const history = useHistory();
+  const { search } = useLocation();
 
-  const buildQueryString = (operation, valueObj) => {
-    const { search } = useLocation();
+  const buildAQueryString = (operation, valueObj) => {
     const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
+
     const newQueryParams = {
       ...currentQueryParams,
-      [operation]: JSON.stringify(valueObj),
+      [operation]: JSON.stringify({
+        ...JSON.parse(currentQueryParams[operation] || "{}"),
+        ...valueObj,
+      }),
     };
+
     return qs.stringify(newQueryParams, {
       addQueryPrefix: true,
       encode: false,
@@ -32,13 +37,9 @@ const SideBar = () => {
 
   const handleSearch = (event) => {
     event.preventDefault();
-    // eslint-disable-next-line no-console
-    console.log(`searchtext${searchText}`);
-    const newQueryString = buildQueryString("query", {
-      title: { searchText },
+    const newQueryString = buildAQueryString("query", {
+      title: { $regex: searchText },
     });
-    // eslint-disable-next-line no-console
-    console.log(`Query: ${newQueryString}`);
     history.push(newQueryString);
   };
 
@@ -64,7 +65,7 @@ const SideBar = () => {
         <li>
           <Link
             className="side-bar__filter"
-            to={buildQueryString("query", { city: "Manchester" })}
+            to={buildAQueryString("query", { city: "Manchester" })}
           >
             Manchester
           </Link>
@@ -72,7 +73,7 @@ const SideBar = () => {
         <li>
           <Link
             className="side-bar__filter"
-            to={buildQueryString("query", { city: "Leeds" })}
+            to={buildAQueryString("query", { city: "Leeds" })}
           >
             Leeds
           </Link>
@@ -80,7 +81,7 @@ const SideBar = () => {
         <li>
           <Link
             className="side-bar__filter"
-            to={buildQueryString("query", { city: "Liverpool" })}
+            to={buildAQueryString("query", { city: "Liverpool" })}
           >
             Liverpool
           </Link>
@@ -88,7 +89,7 @@ const SideBar = () => {
         <li>
           <Link
             className="side-bar__filter"
-            to={buildQueryString("query", { city: "Sheffield" })}
+            to={buildAQueryString("query", { city: "Sheffield" })}
           >
             Sheffield
           </Link>
@@ -97,12 +98,12 @@ const SideBar = () => {
       Sort:
       <ul>
         <li>
-          <Link to={buildQueryString("sort", { price: 1 })}>
+          <Link to={buildAQueryString("sort", { price: 1 })}>
             Price Ascending
             <FontAwesomeIcon icon={faSortUp} />
           </Link>
           <br />
-          <Link to={buildQueryString("sort", { price: -1 })}>
+          <Link to={buildAQueryString("sort", { price: -1 })}>
             Price Descending
             <FontAwesomeIcon icon={faSortDown} />
           </Link>
